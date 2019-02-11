@@ -12,8 +12,13 @@ ___________________________________________________________
 #
 
 ##### - Endpoint
+  - **PRODUCTION**
 ```sh
-https:heksainsurance.co.id/posmgmapi/api/submitsuccessdata
+https:heksainsurance.co.id/heksaapi/api/submitsuccessdata
+```
+  - **DEVELOPMENT**
+```sh
+http://103.58.146.64/heksaapi/api/submitsuccessdata
 ```
 #
 
@@ -140,3 +145,63 @@ ___________________________________________________________
 - [x] Saya menyatakan bahwa Penerima Manfaat yang terlampir pada eSPAJ (Surat Permohonan Asuransi Jiwa Digital) telah memenuhi sebagai pihak yang memiliki kepentingan yang dapat diasuransikan (Insurable Interest) dan memiliki bukti yang sah secara hukum untuk membuktikan hubungannya dengan Tertanggung. Apabila ada data dan informasi yang berbeda, dengan ini saya membebaskan PT Heksa Solution Insurance dari segala tuntutan dari pihak manapun.
 - [x] Saya menyatakan bahwa semua Pernyataan atau Keterangan yang saya sampaikan telah lengkap, benar dan sesuai. Apabila terdapat Pernyataan atau Keterangan yang tidak sesuai dengan kondisi sebenarnya, baik disengaja maupun tidak, maka PT Heksa Solution Insurance berhak membatalkan polis dan atau tidak berkewajiban untuk menyetujui permohonan asuransi ini.
                                                                 
+___________________________________________________________
+
+
+### Check RefID
+#### URL & Params Required:
+##### - Features
+  - Sender : **PT POS INDONESIA**
+  - Target API : **Heksa Insurance**
+  - Check for RefID valid or not 
+#
+
+##### - Endpoint
+  - **PRODUCTION**
+```sh
+https:heksainsurance.co.id/heksaapi/api/validaterefid
+```
+  - **DEVELOPMENT**
+```sh
+http://103.58.146.64/heksaapi/api/validaterefid
+```
+#
+
+##### - Method : POST
+#
+
+##### - Authorization Basic Auth
+
+| Params | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|
+|username| [text] | Y |150 |Username untuk basic auth - diberi oleh heksa insurance |
+|password|[text] | Y |150 |Password basic auth - diberi oleh heksa insurance |
+
+#
+##### - Body Structure
+
+| Params | | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|--|
+|MerchantID| | [text] | Y |50 | ID Merchant diberikan oleh Heksa Insurance|
+|WORDS| | [text] | Y |254 | enkripsi kombinasi RefID+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
+|RefID| | [text] | Y |150 | Nama Produk Asuransi|
+#
+
+##### - Result Structure
+| Params | | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|--|
+| StatusCode |  | [Text] | Y | 4 | 200 = Berhasil, 500 = Gagal |
+| StatusMessage |  | [Text] | Y | 100 |  |
+| Value |  | [Text] | Y | 100 | "10" = valid, "50" = tidak valid |
+#
+
+###### Failed Response
+```sh
+{
+    "StatusCode": "500",
+    "StatusMessage": "There is an error in system",
+    "Value" : null
+}
+```
+#
+____________________________________________________________________
