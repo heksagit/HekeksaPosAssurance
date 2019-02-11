@@ -184,7 +184,7 @@ http://103.58.146.64/heksaapi/api/validaterefid
 |--|--|--|--|--|--|
 |MerchantID| | [text] | Y |50 | ID Merchant diberikan oleh Heksa Insurance|
 |WORDS| | [text] | Y |254 | enkripsi kombinasi RefID+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
-|RefID| | [text] | Y |150 | Nama Produk Asuransi|
+|RefID| | [text] | Y |150 | Kode Referensi|
 #
 
 ##### - Result Structure
