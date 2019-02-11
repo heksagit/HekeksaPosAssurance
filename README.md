@@ -38,7 +38,8 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 | Params | | Data Type | Mandatory | Length | Description |
 |--|--|--|--|--|--|
 |MerchantID| | [text] | Y |50 | ID Merchant diberikan oleh Heksa Insurance|
-|WORDS| | [text] | Y |254 | enkripsi kombinasi Premium+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
+|SessionID| | [text] | Y |50 | Digenerate Oleh POS Indonesia harus Uniq untuk setiap request|
+|WORDS| | [text] | Y |254 | enkripsi kombinasi SessionID+Premium+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
 |ProductName| | [text] | Y |150 | Nama Produk Asuransi|
 |ProductPackageName| |[text] | Y |150 | Nama Paket (Lihat List)|
 |ProductType| |[number] | Y |  | 1 = Bulanan, 2 = Tahunan |
