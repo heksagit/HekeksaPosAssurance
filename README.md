@@ -100,7 +100,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 ##### - Result Structure
 | Params | | Data Type | Mandatory | Length | Description |
 |--|--|--|--|--|--|
-| StatusCode |  | [Text] | Y | 4 | 200 = Berhasil, 500 = Gagal |
+| StatusCode |  | [Text] | Y | 4 | "00" = Berhasil, "500" = Gagal |
 | StatusMessage |  | [Text] | Y | 100 |  |
 | Value |  | [Text] | Y | 1500 | string object json |
 #
@@ -190,7 +190,7 @@ http://103.58.146.64/heksaapi/api/validaterefid
 ##### - Result Structure
 | Params | | Data Type | Mandatory | Length | Description |
 |--|--|--|--|--|--|
-| StatusCode |  | [Text] | Y | 4 | 200 = Berhasil, 500 = Gagal |
+| StatusCode |  | [Text] | Y | 4 | "00" = Berhasil, "500" = Gagal |
 | StatusMessage |  | [Text] | Y | 100 |  |
 | Value |  | [Text] | Y | 100 | "10" = valid, "50" = tidak valid |
 #
