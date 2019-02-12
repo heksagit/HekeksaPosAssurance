@@ -59,7 +59,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || Email |[text] | Y | 50 | |
 || Phone |[text] | Y | 15 | |
 || KTPNo |[text] | Y | 20 | |
-|| NPWP |[text] | Y | 20 | |
+|| NPWP |[text] | N | 20 | |
 || BirthPlace |[text] | Y |150| Tempat tanggal lahir|
 || DOB |[date] | Y | | Tanggal Lahir format dd/MM/yyyy|
 || Address |[text] | Y | 500 | Alamat Sesuai Identitas |
@@ -81,7 +81,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || Email |[text] | Y | 50 | |
 || Phone |[text] | Y | 15 | |
 || KTPNo |[text] | Y | 20 | |
-|| NPWP |[text] | Y | 20 | |
+|| NPWP |[text] | N | 20 | |
 || BirthPlace |[text] | Y |150| Tempat tanggal lahir|
 || DOB |[text] | Y | | Tanggal Lahir format dd/MM/yyyy|
 || Address |[text] | Y | 500 | Alamat Sesuai Identitas |
