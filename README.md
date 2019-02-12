@@ -46,7 +46,6 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 |PolicyPrintingCost| |[decimal]| Y | | Biaya Cetak Polis |
 |TransactionDate| |[text] | Y | | format dd/MM/yyyy |
 |InsuredRelation| |[text] | Y | 100 | Hubungan Pemegang Polis dengan Tertanggung (Lihat List) |
-|PaymentStatus| |[text] | Y | 10 | 200 = Berhasil, 500 = Gagal |
 |PolicyHolder| |[jsonObject] | Y | | Pemegang Polis |
 || FullName |[text] | Y | 250 | |
 || Sex |[text] | Y | | P/W |
