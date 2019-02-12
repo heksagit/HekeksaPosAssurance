@@ -62,6 +62,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || CityName |[text] | Y | 100 | Kota Sesuai Identitas |
 || District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
 || SourcesOfFinance |[text] | Y | 100 | Sumber Dana (Lihat List) |
+|| SourcesOfFinanceOtherName |[text] | Y | 150 | Sumber Dana Lainnya hanya diisi jika sumber dana dipilih lainnya |
 || MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan (Lihat List) |
 || Job |[text] | Y | 100 | Pekerjaan Nasabah (Lihat List) |
 || JobOtherName |[text] | Y | 150 | Pekerjaan Lainnya hanya diisi jika Pekerjaan dipilih lainnya |
