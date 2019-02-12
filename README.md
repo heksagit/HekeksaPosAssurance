@@ -63,7 +63,10 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
 || SourcesOfFinance |[text] | Y | 100 | Sumber Dana (Lihat List) |
 || MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan (Lihat List) |
+|| Job |[text] | Y | 100 | Pekerjaan Nasabah (Lihat List) |
+|| JobOtherName |[text] | Y | 150 | Pekerjaan Lainnya hanya diisi jika Pekerjaan dipilih lainnya |
 || FiledOfWork |[text] | Y | 100 | Bidang Pekerjaan (Lihat List) |
+|| FiledOfWorkOtherName |[text] | Y | 150 | Bidang Pekerjaan Lainnya Hanya diisi jika bidang pekerjaan dipilih lainnya |
 || CorrespondenceAddress |[text] | Y | 500 | Alamat Pengiriman Polis |
 || CorrespondenceProvinceName |[text] | Y | 100 | Provinsi Pengiriman Polis  |
 || CorrespondenceCityName |[text] | Y | 100 | Kota Pengiriman Polis |
