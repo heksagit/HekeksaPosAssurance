@@ -41,21 +41,15 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 |SessionID| | [text] | Y |50 | Digenerate Oleh POS Indonesia harus Uniq untuk setiap request|
 |WORDS| | [text] | Y |254 | enkripsi kombinasi SessionID+Premium+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
 |ProductCode| | [text] | Y |150 | Kode Produk Asuransi|
-|ProductName| | [text] | Y |150 | Nama Produk Asuransi|
-|ProductPackageName| |[text] | Y |150 | Nama Paket (Lihat List)|
-|ProductType| |[number] | Y |  | 1 = Bulanan, 2 = Tahunan |
 |Premium| |[decimal]| Y | | |
-|SumInsured| |[number]| Y | | |
 |IsPrintPolicy| |[number]| Y | | 1 = Jika Polis ingin dicetak, 0 = Jika Polis tidak ingin dicetak |
 |PolicyPrintingCost| |[decimal]| Y | | Biaya Cetak Polis |
-|ReferenceCode| |[text] | Y | 20 | Kode pemberi referral |
-|TransactionCode| |[text] | Y | 20 | digenerate oleh Pos Indonesia |
 |TransactionDate| |[text] | Y | | format dd/MM/yyyy |
 |InsuredRelation| |[text] | Y | 100 | Hubungan Pemegang Polis dengan Tertanggung (Lihat List) |
 |PaymentStatus| |[text] | Y | 10 | 200 = Berhasil, 500 = Gagal |
 |PolicyHolder| |[jsonObject] | Y | | Pemegang Polis |
 || FullName |[text] | Y | 250 | |
-|| Sex |[text] | Y | | pria, wanita |
+|| Sex |[text] | Y | | P/W |
 || Email |[text] | Y | 50 | |
 || Phone |[text] | Y | 15 | |
 || KTPNo |[text] | Y | 20 | |
@@ -69,15 +63,13 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || SourcesOfFinance |[text] | Y | 100 | Sumber Dana (Lihat List) |
 || MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan (Lihat List) |
 || FiledOfWork |[text] | Y | 100 | Bidang Pekerjaan (Lihat List) |
-|| Height |[number]| Y | | Tinggi Badan |
-|| Weight |[number]| Y | | Berat Badan |
 || CorrespondenceAddress |[text] | Y | 500 | Alamat Pengiriman Polis |
 || CorrespondenceProvinceName |[text] | Y | 100 | Provinsi Pengiriman Polis  |
 || CorrespondenceCityName |[text] | Y | 100 | Kota Pengiriman Polis |
 || CorrespondenceDistrict |[text] | Y | 100 | Kecamatan Pengiriman Polis |
 |Insured| |[jsonObject] | Y | | Tertanggung |
 || FullName |[text] | Y | 250 | |
-|| Sex |[text] | Y | | pria, wanita |
+|| Sex |[text] | Y | | P/W |
 || Email |[text] | Y | 50 | |
 || Phone |[text] | Y | 15 | |
 || KTPNo |[text] | Y | 20 | |
@@ -95,19 +87,14 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || Weight |[number]| Y | | Berat Badan |
 |Beneficiary| |[jsonObject] | Y | | Ahli Waris |
 || FullName |[text] | Y | 50 | |
-|| Sex |[text] | Y | | pria, wanita |
+|| Sex |[text] | Y | | P/W |
 || DOB |[text] | Y | | format dd/MM/yyyy|
 || Relation |[text] | Y | | Hubungan Ahliwaris dengan Tertanggung (Lihat List)|
-|Bank| |[jsonObject] | Y | | Data Bank |
-|| BankName |[text] | Y | |  Nama Bank|
-|| BankBranch |[text] | Y | | Cabang Bank |
-|| BankAccountName |[text] | Y | | Nama Pemilik Rekening |
-|| BankAccountNo |[text] | Y | | Nomer Rekening |
 |Referral| |[jsonObject] | Y | | Data Pemberi Referral |
 || Name |[text] | N | |  Nama Pemberi Referral|
 || Code |[text] | Y | | Code Referral |
-|| Email |[text] | Y | | Email Referral |
-|| Phone |[text] | Y | | Nomor Handphone Referral |
+|| Email |[text] | N | | Email Referral |
+|| Phone |[text] | N | | Nomor Handphone Referral |
 #
 
 ##### - Result Structure
@@ -160,61 +147,3 @@ ___________________________________________________________
                                                                 
 ___________________________________________________________
 
-
-### Check RefID
-#### URL & Params Required:
-##### - Features
-  - Sender : **PT POS INDONESIA**
-  - Target API : **Heksa Insurance**
-  - Check for RefID valid or not 
-#
-
-##### - Endpoint
-  - **PRODUCTION**
-```sh
-https:heksainsurance.co.id/heksaapi/api/validaterefid
-```
-  - **DEVELOPMENT**
-```sh
-http://103.58.146.64/heksaapi/api/validaterefid
-```
-#
-
-##### - Method : POST
-#
-
-##### - Authorization Basic Auth
-
-| Params | Data Type | Mandatory | Length | Description |
-|--|--|--|--|--|
-|username| [text] | Y |150 |Username untuk basic auth - diberi oleh heksa insurance |
-|password|[text] | Y |150 |Password basic auth - diberi oleh heksa insurance |
-
-#
-##### - Body Structure
-
-| Params | | Data Type | Mandatory | Length | Description |
-|--|--|--|--|--|--|
-|MerchantID| | [text] | Y |50 | ID Merchant diberikan oleh Heksa Insurance|
-|WORDS| | [text] | Y |254 | enkripsi kombinasi RefID+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
-|RefID| | [text] | Y |150 | Kode Referensi|
-#
-
-##### - Result Structure
-| Params | | Data Type | Mandatory | Length | Description |
-|--|--|--|--|--|--|
-| StatusCode |  | [Text] | Y | 4 | "00" = Berhasil, "500" = Gagal |
-| StatusMessage |  | [Text] | Y | 100 |  |
-| Value |  | [Text] | Y | 100 | "10" = valid, "50" = tidak valid |
-#
-
-###### Failed Response
-```sh
-{
-    "StatusCode": "500",
-    "StatusMessage": "There is an error in system",
-    "Value" : null
-}
-```
-#
-____________________________________________________________________
