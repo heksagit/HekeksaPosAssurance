@@ -79,9 +79,6 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
 || CityName |[text] | Y | 100 | Kota Sesuai Identitas |
 || District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
-|| SourcesOfFinance |[text] | Y | 100 | Sumber Dana |
-|| MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan |
-|| FiledOfWork |[text] | Y | 100 | Bidang Pekerjaan |
 || Height |[number]| Y | | Tinggi Badan |
 || Weight |[number]| Y | | Berat Badan |
 |Beneficiary| |[jsonObject] | Y | | Ahli Waris |
