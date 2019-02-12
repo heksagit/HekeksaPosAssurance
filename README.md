@@ -40,6 +40,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 |MerchantID| | [text] | Y |50 | ID Merchant diberikan oleh Heksa Insurance|
 |SessionID| | [text] | Y |50 | Digenerate Oleh POS Indonesia harus Uniq untuk setiap request|
 |WORDS| | [text] | Y |254 | enkripsi kombinasi SessionID+Premium+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
+|ProductCode| | [text] | Y |150 | Kode Produk Asuransi|
 |ProductName| | [text] | Y |150 | Nama Produk Asuransi|
 |ProductPackageName| |[text] | Y |150 | Nama Paket (Lihat List)|
 |ProductType| |[number] | Y |  | 1 = Bulanan, 2 = Tahunan |
@@ -49,7 +50,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 |PolicyPrintingCost| |[decimal]| Y | | Biaya Cetak Polis |
 |ReferenceCode| |[text] | Y | 20 | Kode pemberi referral |
 |TransactionCode| |[text] | Y | 20 | digenerate oleh Pos Indonesia |
-|TransactionDate| |[date] | Y | | format dd/MM/yyyy |
+|TransactionDate| |[text] | Y | | format dd/MM/yyyy |
 |InsuredRelation| |[text] | Y | 100 | Hubungan Pemegang Polis dengan Tertanggung (Lihat List) |
 |PaymentStatus| |[text] | Y | 10 | 200 = Berhasil, 500 = Gagal |
 |PolicyHolder| |[jsonObject] | Y | | Pemegang Polis |
@@ -82,7 +83,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || KTPNo |[text] | Y | 20 | |
 || NPWP |[text] | Y | 20 | |
 || BirthPlace |[text] | Y |150| Tempat tanggal lahir|
-|| DOB |[date] | Y | | Tanggal Lahir format dd/MM/yyyy|
+|| DOB |[text] | Y | | Tanggal Lahir format dd/MM/yyyy|
 || Address |[text] | Y | 500 | Alamat Sesuai Identitas |
 || ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
 || CityName |[text] | Y | 100 | Kota Sesuai Identitas |
@@ -95,7 +96,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 |Beneficiary| |[jsonObject] | Y | | Ahli Waris |
 || FullName |[text] | Y | 50 | |
 || Sex |[text] | Y | | pria, wanita |
-|| DOB |[date] | Y | | format dd/MM/yyyy|
+|| DOB |[text] | Y | | format dd/MM/yyyy|
 || Relation |[text] | Y | | Hubungan Ahliwaris dengan Tertanggung (Lihat List)|
 |Bank| |[jsonObject] | Y | | Data Bank |
 || BankName |[text] | Y | |  Nama Bank|
