@@ -46,6 +46,8 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 |PolicyPrintingCost| |[decimal]| Y | | Biaya Cetak Polis |
 |TransactionDate| |[text] | Y | | format dd/MM/yyyy |
 |InsuredRelation| |[text] | Y | 100 | Hubungan Pemegang Polis dengan Tertanggung (Lihat List) |
+|AplicationType| |[text] | Y | 5 | Tipe Pembelian : 1 = Agen Sendiri, 2 = Orang Lain |
+|AgenCode| |[text] | Y | 5 | Di isi Kode Agen yang punya Account |
 |PolicyHolder| |[jsonObject] | Y | | Pemegang Polis |
 || FullName |[text] | Y | 250 | |
 || Sex |[text] | Y | | P/W |
@@ -88,7 +90,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || Relation |[text] | Y | | Hubungan Ahliwaris dengan Tertanggung (Lihat List)|
 |Referral| |[jsonObject] | Y | | Data Pemberi Referral |
 || Name |[text] | N | |  Nama Pemberi Referral|
-|| Code |[text] | Y | | Code Referral |
+|| Code |[text] | Y | | Code Referral di isi Kode Agen pemberi referral |
 || Email |[text] | N | | Email Referral |
 || Phone |[text] | N | | Nomor Handphone Referral |
 #
