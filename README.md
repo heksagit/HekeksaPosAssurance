@@ -103,6 +103,11 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || BankBranch |[text] | Y | | Cabang Bank |
 || BankAccountName |[text] | Y | | Nama Pemilik Rekening |
 || BankAccountNo |[text] | Y | | Nomer Rekening |
+|Referral| |[jsonObject] | Y | | Data Pemberi Referral |
+|| Name |[text] | N | |  Nama Pemberi Referral|
+|| Code |[text] | Y | | Code Referral |
+|| Email |[text] | Y | | Email Referral |
+|| Phone |[text] | Y | | Nomor Handphone Referral |
 #
 
 ##### - Result Structure
