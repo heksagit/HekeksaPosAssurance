@@ -81,11 +81,16 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || Address |[text] | Y | 500 | Alamat Sesuai Identitas |
 || ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
 || CityName |[text] | Y | 100 | Kota Sesuai Identitas |
+|| District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
 || SourcesOfFinance |[text] | Y | 100 | Sumber Dana |
 || MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan |
 || FiledOfWork |[text] | Y | 100 | Bidang Pekerjaan |
 || Height |[number]| Y | | Tinggi Badan |
 || Weight |[number]| Y | | Berat Badan |
+|| CorrespondenceAddress |[text] | Y | 500 | Alamat Pengiriman Polis |
+|| CorrespondenceProvinceName |[text] | Y | 100 | Provinsi Pengiriman Polis  |
+|| CorrespondenceCityName |[text] | Y | 100 | Kota Pengiriman Polis |
+|| CorrespondenceDistrict |[text] | Y | 100 | Kecamatan Pengiriman Polis |
 |Beneficiary| |[jsonObject] | Y | | Ahli Waris |
 || FullName |[text] | Y | 50 | |
 || Sex |[text] | Y | | pria, wanita |
