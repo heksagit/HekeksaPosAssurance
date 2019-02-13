@@ -95,6 +95,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 |Referral| |[jsonObject] | Y | | Data Pemberi Referral |
 || Name |[text] | N | |  Nama Pemberi Referral|
 || Code |[text] | Y | | Code Referral di isi Kode Agen pemberi referral |
+|| BankAccountNo |[text] | Y | | No Account CGS Referral di isi No Account CGS POS Agen pemberi referral |
 || Email |[text] | N | | Email Referral |
 || Phone |[text] | N | | Nomor Handphone Referral |
 #
