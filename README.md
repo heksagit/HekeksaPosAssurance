@@ -105,14 +105,26 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 | StatusCode |  | [Text] | Y | 4 | "00" = Berhasil, "500" = Gagal |
 | StatusMessage |  | [Text] | Y | 100 |  |
 | Value |  | [Text] | Y | 1500 | string object json |
+|| PolicyNo | [Text] | Y | 100 | Nomor Polis |
+|| PolicyUrl | [Text] | Y | 250 | Url Download Polis |
+|| Message | [Text] | Y | 1500 |  |
 #
 
+###### Success Response
+```sh
+{
+    "StatusCode": "00",
+    "StatusMessage": "submit data berhasil",
+    "Value" : ""
+}
+```
+#
 ###### Failed Response
 ```sh
 {
     "StatusCode": "500",
     "StatusMessage": "There is an error in system",
-    "Value" : null
+    "Value" : 
 }
 ```
 #
