@@ -11,6 +11,11 @@ ___________________________________________________________
   - Submit Data aplication from **POS Indonesia** to **Heksa Insurance** API for product Heksa Aktif Plus and Heksa Rencana Aman
 #
 
+##### - PRODUK
+  - Heksa Aktif Plus
+  - Heksa Rencana Aman
+#
+
 ##### - Endpoint
   - **PRODUCTION**
 ```sh
@@ -96,6 +101,126 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || Name |[text] | N | |  Nama Pemberi Referral|
 || Code |[text] | Y | | Code Referral di isi Kode Agen pemberi referral |
 || BankAccountNo |[text] | Y | | No Account CGS Referral di isi No Account CGS POS Agen pemberi referral |
+|| Email |[text] | N | | Email Referral |
+|| Phone |[text] | N | | Nomor Handphone Referral |
+#
+
+##### - Result Structure
+| Params | | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|--|
+| StatusCode |  | [Text] | Y | 4 | "00" = Berhasil, "500" = Gagal |
+| StatusMessage |  | [Text] | Y | 100 |  |
+| Value |  | [Text] | Y | 1500 | string object json |
+|| PolicyNo | [Text] | Y | 100 | Nomor Polis |
+|| PolicyUrl | [Text] | Y | 250 | Url Download Polis |
+|| Message | [Text] | Y | 1500 |  |
+#
+
+###### Success Response
+```sh
+{
+    "StatusCode": "00",
+    "StatusMessage": "submit data berhasil",
+    "Value" : ""
+}
+```
+#
+###### Failed Response
+```sh
+{
+    "StatusCode": "500",
+    "StatusMessage": "There is an error in system",
+    "Value" : 
+}
+```
+#
+____________________________________________________________________
+
+### Submit aplication Data
+#### URL & Params Required:
+##### - Features
+  - Sender : **PT POS INDONESIA**
+  - Target API : **Heksa Insurance**
+  - Submit Data aplication from **POS Indonesia** to **Heksa Insurance** API 
+#
+
+##### - PRODUK
+  - Heksa Perisai Diri
+#
+
+##### - Endpoint
+  - **PRODUCTION**
+```sh
+https:heksainsurance.co.id/heksaapi/api/submitsuccessdata
+```
+  - **DEVELOPMENT**
+```sh
+http://103.58.146.64/heksaapi/api/submitsuccessdata
+```
+#
+
+##### - Method : POST
+#
+
+##### - Authorization Basic Auth
+
+| Params | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|
+|username| [text] | Y |150 |Username untuk basic auth - diberi oleh heksa insurance |
+|password|[text] | Y |150 |Password basic auth - diberi oleh heksa insurance |
+
+#
+##### - Body Structure
+
+| Params | | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|--|
+|MerchantID| | [text] | Y |50 | ID Merchant diberikan oleh Heksa Insurance|
+|SessionID| | [text] | Y |50 | Digenerate Oleh POS Indonesia harus Uniq untuk setiap request|
+|WORDS| | [text] | Y |254 | enkripsi kombinasi SessionID+Premium+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
+|ProductCode| | [text] | Y |150 | Kode Produk Asuransi|
+|Premium| |[decimal]| Y | | |
+|IsPrintPolicy| |[number]| Y | | 1 = Jika Polis ingin dicetak, 0 = Jika Polis tidak ingin dicetak |
+|PolicyPrintingCost| |[decimal]| N | | Biaya Cetak Polis, Mandatory jika ada biaya cetak polis |
+|TransactionDate| |[text] | Y | | format dd/MM/yyyy |
+|InsuredRelation| |[text] | Y | 100 | Hubungan Pemegang Polis dengan Tertanggung (Lihat List) |
+|AplicationType| |[text] | Y | 5 | Tipe Pembelian : 1 = Agen Sendiri, 2 = Orang Lain |
+|AgenCode| |[text] | Y | 50 | Di isi Kode Agen yang punya Account |
+|PolicyHolder| |[jsonObject] | Y | | Pemegang Polis |
+|| FullName |[text] | Y | 250 | |
+|| Sex |[text] | Y | | P/W |
+|| Email |[text] | Y | 50 | |
+|| Phone |[text] | Y | 15 | |
+|| KTPNo |[text] | Y | 20 | |
+|| NPWP |[text] | N | 20 | |
+|| BirthPlace |[text] | Y |150| Tempat tanggal lahir|
+|| DOB |[date] | Y | | Tanggal Lahir format dd/MM/yyyy|
+|| Address |[text] | Y | 500 | Alamat Sesuai Identitas |
+|| ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
+|| CityName |[text] | Y | 100 | Kota Sesuai Identitas |
+|| District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
+|Insured| |[jsonObject] | Y | | Tertanggung |
+|| FullName |[text] | Y | 250 | |
+|| Sex |[text] | Y | | P/W |
+|| Email |[text] | Y | 50 | |
+|| Phone |[text] | Y | 15 | |
+|| KTPNo |[text] | Y | 20 | |
+|| NPWP |[text] | N | 20 | |
+|| BirthPlace |[text] | Y |150| Tempat tanggal lahir|
+|| DOB |[date] | Y | | Tanggal Lahir format dd/MM/yyyy|
+|| Address |[text] | Y | 500 | Alamat Sesuai Identitas |
+|| ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
+|| CityName |[text] | Y | 100 | Kota Sesuai Identitas |
+|| District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
+|Beneficiary| |[jsonObject] | Y | | Ahli Waris |
+|| FullName |[text] | Y | 50 | |
+|| Sex |[text] | Y | | P/W |
+|| DOB |[text] | Y | | format dd/MM/yyyy|
+|| Relation |[text] | Y | | Hubungan Ahliwaris dengan Tertanggung (Lihat List)|
+|Referral| |[jsonObject] | Y | | Data Pemberi Referral |
+|| Name |[text] | N | |  Nama Pemberi Referral|
+|| Code |[text] | Y | | Code Referral di isi Kode Agen pemberi referral |
+|| BankAccountNo |[text] | Y | | No Account CGS Referral di isi No Account CGS POS Agen pemberi referral |
+|| BranchCode |[text] | N | | Kode Cabang Agen pemberi referral di isi jika ada |
 || Email |[text] | N | | Email Referral |
 || Phone |[text] | N | | Nomor Handphone Referral |
 #
