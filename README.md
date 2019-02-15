@@ -8,7 +8,7 @@ ___________________________________________________________
 ##### - Features
   - Sender : **PT POS INDONESIA**
   - Target API : **Heksa Insurance**
-  - Submit Data aplication from **POS Indonesia** to **Heksa Insurance** API
+  - Submit Data aplication from **POS Indonesia** to **Heksa Insurance** API for product Heksa Aktif Plus and Heksa Rencana Aman
 #
 
 ##### - Endpoint
