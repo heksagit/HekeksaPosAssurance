@@ -178,15 +178,13 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 |SessionID| | [text] | Y |50 | Digenerate Oleh POS Indonesia harus Uniq untuk setiap request|
 |WORDS| | [text] | Y |254 | enkripsi kombinasi SessionID+Premium+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
 |ProductCode| | [text] | Y |150 | Kode Produk Asuransi|
-|Premium| |[decimal]| Y | | |
-|IsPrintPolicy| |[number]| Y | | 1 = Jika Polis ingin dicetak, 0 = Jika Polis tidak ingin dicetak |
-|PolicyPrintingCost| |[decimal]| N | | Biaya Cetak Polis, Mandatory jika ada biaya cetak polis |
+|Premium| |[decimal]| Y | | Premi Asuransi |
 |TransactionDate| |[text] | Y | | format dd/MM/yyyy |
 |InsuredRelation| |[text] | Y | 100 | Hubungan Pemegang Polis dengan Tertanggung (Lihat List) |
 |AplicationType| |[text] | Y | 5 | Tipe Pembelian : 1 = Agen Sendiri, 2 = Orang Lain |
 |AgenCode| |[text] | Y | 50 | Di isi Kode Agen yang punya Account |
 |PolicyHolder| |[jsonObject] | Y | | Pemegang Polis |
-|| FullName |[text] | Y | 250 | |
+|| FullName |[text] | Y | 250 | Nama Lengkap |
 || Sex |[text] | Y | | P/W |
 || Email |[text] | Y | 50 | |
 || Phone |[text] | Y | 15 | |
@@ -199,7 +197,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || CityName |[text] | Y | 100 | Kota Sesuai Identitas |
 || District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
 |Insured| |[jsonObject] | Y | | Tertanggung |
-|| FullName |[text] | Y | 250 | |
+|| FullName |[text] | Y | 250 | Nama Lengkap |
 || Sex |[text] | Y | | P/W |
 || Email |[text] | Y | 50 | |
 || Phone |[text] | Y | 15 | |
