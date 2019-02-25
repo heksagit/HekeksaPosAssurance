@@ -84,6 +84,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || Phone |[text] | Y | 15 | |
 || KTPNo |[text] | Y | 20 | |
 || NPWP |[text] | N | 20 | |
+|| MaritalStatus |[text] | Y | 50 | |
 || BirthPlace |[text] | Y |150| Tempat tanggal lahir|
 || DOB |[text] | Y | | Tanggal Lahir format dd/MM/yyyy|
 || Address |[text] | Y | 500 | Alamat Sesuai Identitas |
