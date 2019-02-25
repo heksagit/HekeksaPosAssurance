@@ -66,6 +66,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
 || CityName |[text] | Y | 100 | Kota Sesuai Identitas |
 || District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
+|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
 || SourcesOfFinance |[text] | Y | 100 | Sumber Dana (Lihat List) |
 || SourcesOfFinanceOtherName |[text] | Y | 150 | Sumber Dana Lainnya hanya diisi jika sumber dana dipilih lainnya |
 || MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan (Lihat List) |
