@@ -66,7 +66,6 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
 || CityName |[text] | Y | 100 | Kota Sesuai Identitas |
 || District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
-|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
 || SourcesOfFinance |[text] | Y | 100 | Sumber Dana (Lihat List) |
 || SourcesOfFinanceOtherName |[text] | Y | 150 | Sumber Dana Lainnya hanya diisi jika sumber dana dipilih lainnya |
 || MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan (Lihat List) |
@@ -78,6 +77,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || CorrespondenceProvinceName |[text] | Y | 100 | Provinsi Pengiriman Polis  |
 || CorrespondenceCityName |[text] | Y | 100 | Kota Pengiriman Polis |
 || CorrespondenceDistrict |[text] | Y | 100 | Kecamatan Pengiriman Polis |
+|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
 |Insured| |[jsonObject] | Y | | Tertanggung |
 || FullName |[text] | Y | 250 | |
 || Sex |[text] | Y | | P/W |
@@ -85,7 +85,6 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || Phone |[text] | Y | 15 | |
 || KTPNo |[text] | Y | 20 | |
 || NPWP |[text] | N | 20 | |
-|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
 || BirthPlace |[text] | Y |150| Tempat tanggal lahir|
 || DOB |[text] | Y | | Tanggal Lahir format dd/MM/yyyy|
 || Address |[text] | Y | 500 | Alamat Sesuai Identitas |
@@ -94,6 +93,7 @@ http://103.58.146.64/heksaapi/api/submitsuccessdata
 || District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
 || Height |[number]| Y | | Tinggi Badan |
 || Weight |[number]| Y | | Berat Badan |
+|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
 |Beneficiary| |[jsonObject] | Y | | Ahli Waris |
 || FullName |[text] | Y | 50 | |
 || Sex |[text] | Y | | P/W |
