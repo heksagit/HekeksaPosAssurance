@@ -19,7 +19,7 @@ ___________________________________________________________
 ##### - Endpoint
   - **PRODUCTION**
 ```sh
-https:heksainsurance.co.id/heksaapi/api/submitsuccessdata
+https://heksainsurance.co.id/heksaapi/api/submitsuccessdata
 ```
   - **DEVELOPMENT**
 ```sh
