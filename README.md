@@ -2,6 +2,144 @@
 PT Asuransi Heksa Insurance X PT Pos Indonesia 
 ___________________________________________________________
 
+### Validate aplication Data
+#### URL & Params Required:
+##### - Features
+  - Sender : **PT POS INDONESIA**
+  - Target API : **Heksa Insurance**
+  - Validate Submit Data aplication from **POS Indonesia** to **Heksa Insurance** API for All Product
+#
+
+##### - PRODUK
+  - Heksa Aktif Plus
+  - Heksa Rencana Aman
+  - Heksa Perisai Diri
+#
+
+##### - Endpoint
+  - **PRODUCTION**
+```sh
+https://heksainsurance.co.id/heksaapi/api/pos/validatedata
+```
+  - **DEVELOPMENT**
+```sh
+http://103.58.146.64/heksaapi/api/pos/validatedata
+```
+#
+
+##### - Method : POST
+#
+
+##### - Authorization Basic Auth
+
+| Params | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|
+|username| [text] | Y |150 |Username untuk basic auth - diberi oleh heksa insurance |
+|password|[text] | Y |150 |Password basic auth - diberi oleh heksa insurance |
+
+#
+##### - Body Structure
+
+| Params | | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|--|
+|MerchantID| | [text] | Y |50 | ID Merchant diberikan oleh Heksa Insurance|
+|SessionID| | [text] | Y |50 | Digenerate Oleh POS Indonesia harus Uniq untuk setiap request|
+|WORDS| | [text] | Y |254 | enkripsi kombinasi SessionID+Premium+MerchantID+Sharedkey SharedKey diberikan oleh heksa insurance|
+|ProductCode| | [text] | Y |150 | Kode Produk Asuransi|
+|Premium| |[decimal]| Y | | |
+|IsPrintPolicy| |[number]| Y | | 1 = Jika Polis ingin dicetak, 0 = Jika Polis tidak ingin dicetak |
+|PolicyPrintingCost| |[decimal]| Y | | Biaya Cetak Polis |
+|TransactionDate| |[text] | Y | | format dd/MM/yyyy |
+|InsuredRelation| |[text] | Y | 100 | Hubungan Pemegang Polis dengan Tertanggung (Lihat List) |
+|AplicationType| |[text] | Y | 5 | Tipe Pembelian : 1 = Agen Sendiri, 2 = Orang Lain |
+|AgenCode| |[text] | Y | 50 | Di isi Kode Agen yang punya Account |
+|PolicyHolder| |[jsonObject] | Y | | Pemegang Polis |
+|| FullName |[text] | Y | 250 | |
+|| Sex |[text] | Y | | P/W |
+|| Email |[text] | Y | 50 | |
+|| Phone |[text] | Y | 15 | |
+|| KTPNo |[text] | Y | 20 | |
+|| NPWP |[text] | N | 20 | |
+|| BirthPlace |[text] | Y |150| Tempat tanggal lahir|
+|| DOB |[date] | Y | | Tanggal Lahir format dd/MM/yyyy|
+|| Address |[text] | Y | 500 | Alamat Sesuai Identitas |
+|| ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
+|| CityName |[text] | Y | 100 | Kota Sesuai Identitas |
+|| District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
+|| SourcesOfFinance |[text] | Y | 100 | Sumber Dana (Lihat List) |
+|| SourcesOfFinanceOtherName |[text] | Y | 150 | Sumber Dana Lainnya hanya diisi jika sumber dana dipilih lainnya |
+|| MonthlyIncome |[text] | Y | 100 | Penghasilan Perbulan (Lihat List) |
+|| Job |[text] | Y | 100 | Pekerjaan Nasabah (Lihat List) |
+|| JobOtherName |[text] | Y | 150 | Pekerjaan Lainnya hanya diisi jika Pekerjaan dipilih lainnya |
+|| FiledOfWork |[text] | Y | 100 | Bidang Pekerjaan (Lihat List) |
+|| FiledOfWorkOtherName |[text] | Y | 150 | Bidang Pekerjaan Lainnya Hanya diisi jika bidang pekerjaan dipilih lainnya |
+|| CorrespondenceAddress |[text] | Y | 500 | Alamat Pengiriman Polis |
+|| CorrespondenceProvinceName |[text] | Y | 100 | Provinsi Pengiriman Polis  |
+|| CorrespondenceCityName |[text] | Y | 100 | Kota Pengiriman Polis |
+|| CorrespondenceDistrict |[text] | Y | 100 | Kecamatan Pengiriman Polis |
+|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
+|Insured| |[jsonObject] | Y | | Tertanggung |
+|| FullName |[text] | Y | 250 | |
+|| Sex |[text] | Y | | P/W |
+|| Email |[text] | Y | 50 | |
+|| Phone |[text] | Y | 15 | |
+|| KTPNo |[text] | Y | 20 | |
+|| NPWP |[text] | N | 20 | |
+|| BirthPlace |[text] | Y |150| Tempat tanggal lahir|
+|| DOB |[text] | Y | | Tanggal Lahir format dd/MM/yyyy|
+|| Address |[text] | Y | 500 | Alamat Sesuai Identitas |
+|| ProvinceName |[text] | Y | 100 | Provinsi Sesuai Identitas  |
+|| CityName |[text] | Y | 100 | Kota Sesuai Identitas |
+|| District |[text] | Y | 100 | Kecamatan Sesuai Identitas |
+|| Height |[number]| Y | | Tinggi Badan |
+|| Weight |[number]| Y | | Berat Badan |
+|| MaritalStatus |[text] | Y | 50 | Status Pernikahan (Lihat List)|
+|Beneficiary| |[jsonObject] | Y | | Ahli Waris |
+|| FullName |[text] | Y | 50 | |
+|| Sex |[text] | Y | | P/W |
+|| DOB |[text] | Y | | format dd/MM/yyyy|
+|| Relation |[text] | Y | | Hubungan Ahliwaris dengan Tertanggung (Lihat List)|
+|Referral| |[jsonObject] | Y | | Data Pemberi Referral |
+|| Name |[text] | N | |  Nama Pemberi Referral|
+|| Code |[text] | Y | | Code Referral di isi Kode Agen pemberi referral |
+|| BankAccountNo |[text] | Y | | No Account CGS Referral di isi No Account CGS POS Agen pemberi referral |
+|| Email |[text] | N | | Email Referral |
+|| Phone |[text] | N | | Nomor Handphone Referral |
+#
+
+##### - Result Structure
+| Params | | Data Type | Mandatory | Length | Description |
+|--|--|--|--|--|--|
+| StatusCode |  | [Text] | Y | 4 | "00" = Berhasil, "500" = Gagal |
+| StatusMessage |  | [Text] | Y | 100 |  |
+| Value |  | [Text] | Y | 1500 | string object json |
+|| PolicyNo | [Text] | Y | 100 | Nomor Polis |
+|| PolicyUrl | [Text] | Y | 250 | Url Download Polis |
+|| Message | [Text] | Y | 1500 |  |
+#
+
+###### Success Response
+```sh
+{
+    "StatusCode": "00",
+    "StatusMessage": "Data valid",
+    "Value" : ""
+}
+```
+#
+###### Failed Response
+```sh
+{
+    "StatusCode": "50",
+    "StatusMessage": "Data tidak valid",
+    "Value" : [
+      array string error
+    ]
+}
+```
+#
+____________________________________________________________________
+
 
 ### Submit aplication Data
 #### URL & Params Required:
