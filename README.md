@@ -113,9 +113,7 @@ http://103.58.146.64/heksaapi/api/pos/validatedata
 | StatusCode |  | [Text] | Y | 4 | "00" = Berhasil, "500" = Gagal |
 | StatusMessage |  | [Text] | Y | 100 |  |
 | Value |  | [Text] | Y | 1500 | string object json |
-|| PolicyNo | [Text] | Y | 100 | Nomor Polis |
-|| PolicyUrl | [Text] | Y | 250 | Url Download Polis |
-|| Message | [Text] | Y | 1500 |  |
+|| List Error | [Array String] | Y | 100 | List Error |
 #
 
 ###### Success Response
